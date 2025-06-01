@@ -27,3 +27,22 @@ For a given folder like so with different github repo clones:
 
 ### Github repo:
 - https://github.com/ChaoticGoodDev/gitBatchTool
+
+### References:
+1. Bulk check all subdirectories
+    1. https://stackoverflow.com/questions/3497123/run-git-pull-over-all-subdirectories
+    2. Notes from reference:
+        ```PowerShell
+        find ..\ -type d -depth 1 -exec git --git-dir={}/.git --work-tree=$PWD/{} pull origin master \;
+        ```
+        - The ```..\``` will make it go into the parent directory of the gitBatchTool.
+        - ```-type d``` to find directories - not files
+        - ``` -depth 1``` for max depth of 1 within the sub-directories 
+        - ```-exec {} \;``` will run the command in the bracket (I think, need to confirm) for every find.
+        - ```git --git-dir={}/.git --work-tree=$PWD/{} pull``` will pull the individual directories
+2. Saving Output:
+    1. https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/out-file?view=powershell-7.5
+    2. Notes from reference:
+        - ```Out-File``` Seems to be the approach I need for piping the results to a file.
+        - ```function``` appears to allow someone to build functions in powershell. Should take advantage of. Will make it easier to build this as a powershell program. This particular example also shows how to handle it for the entire scope.
+            - https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/out-file?view=powershell-7.5#example-5-set-file-output-width-for-entire-scope
