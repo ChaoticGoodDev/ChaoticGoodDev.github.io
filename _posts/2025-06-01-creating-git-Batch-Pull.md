@@ -24,3 +24,6 @@ For a given folder like so with different github repo clones:
 2. If conflicts arise, the problematic repo is skipped over and output is provided saying as such.
     - Results are also saved in datetimestamped files, for tracability
 3. If a username/password or token is required, it will prompt the user to do so at each interval.
+
+### Github repo:
+- https://github.com/ChaoticGoodDev/gitBatchTool
