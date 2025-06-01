@@ -1,4 +1,4 @@
-## New Blog - Creating Git Batch Pull
+## Creating Git Batch Pull
 
 Let's test this out. I'm going to toss together a quick project design for a shell script. I will follow up on this project later, and update this blog post.
 
